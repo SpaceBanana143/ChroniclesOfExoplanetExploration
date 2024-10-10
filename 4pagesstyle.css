@@ -1,0 +1,98 @@
+body {
+    font-family: sans-serif;
+    letter-spacing: 0.2vw;
+    font-size: 2.2vw;
+}
+.left{
+    color: rgba(255, 255, 255, 0.773);
+    width: 26%;
+    margin: 0 0 0 3%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;  
+}
+.left p{
+    line-height: 2.5vw;
+}
+h1{
+    color: rgb(126, 133, 175);
+    text-shadow: 2px 2px 6px rgb(34, 28, 49);
+}
+.right{
+    position: absolute;
+    right: 2%;
+    bottom: 10dvh;
+    width: 26%;
+    height: 18dvh;
+    color: white;
+}
+.right button{
+    position: absolute;
+    right: 5%;
+    width: 45%;
+    height: 8dvh;
+    border: none;
+    border-radius: 10px;
+    font-size: 2vw;
+    letter-spacing: 2.3px;
+    font-weight: bold;
+    text-shadow: 2px 2px 6px rgb(47, 47, 71);
+    color: white;
+    background-color: rgb(126, 133, 175);
+    cursor: pointer;
+}
+.right button:hover{
+    background-color: rgb(33, 33, 58);
+    transition: 0.3s;
+}
+.back{
+    position: absolute;
+    left: 3.5%;
+    bottom: 6dvh;
+    width: 26%;
+    height: 18dvh;
+}
+.back button{
+    position: absolute;
+    bottom: -3%;
+    width: 55%;
+    height: 8dvh;
+    border: none;
+    border-radius: 10px;
+    font-size: 2vw;
+    letter-spacing: 2.3px;
+    font-weight: bold;
+    text-shadow: 2px 2px 6px rgb(47, 47, 71);
+    color: white;
+    background-color: rgb(126, 133, 175);
+    cursor: pointer;
+}
+.back button:hover{
+    background-color: rgb(33, 33, 58);
+    transition: 0.3s;
+}
+
+@keyframes slide-right {
+    0% {
+        transform: translateX(-100%); 
+    }
+    100% {
+    transform: translateX(0); 
+    }
+}
+.slide-r {
+    display: inline-block; 
+    animation: slide-right 0.5s ease-out forwards;
+}
+@keyframes slide-left {
+    0% {
+        transform: translateX(100%); 
+    }
+    100% {
+    transform: translateX(0); 
+    }
+}
+.slide-l {
+    display: inline-block; 
+    animation: slide-left 0.5s ease-out forwards;
+}
