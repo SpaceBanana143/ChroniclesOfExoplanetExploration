@@ -1,0 +1,78 @@
+.popUp{
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%) scale(0);
+    transition: 200ms ease-in-out;
+    border: 1px solid black;
+    border-radius: 2%;
+    z-index: 10;
+    background-color: aliceblue;
+    width: 60vw;
+    height: 70vh;
+    
+}
+.popUp.active{
+    z-index: 12;
+    transform: translate(-50%, -50%) scale(1); 
+}
+.popUp-header{
+    /* padding: 0.4% 1.5%; */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-bottom: 1px solid black;
+}
+
+.popUp-body{
+    padding: 0 1.5% 0 1.5%;
+
+    /* padding: 0.4% 1.5%; */
+}
+.popUp-footer{
+    display: flex;
+    justify-content: center;
+}
+.brojIvreme{
+    font-size: 2vw;
+    font-weight: bolder;
+}
+.popUp4Buttons{
+    display: flex;
+    justify-content: space-around;
+}
+#popUp2{
+    width: 45vw;
+    height: 50vh; 
+}
+#istecenoVreme{
+    font-size: 5vh;
+}
+#popUp3{
+    height: 79vh;
+}
+.nemaVremeINajdeniSiteLinkovi{
+    color: black;
+}
+#najdeniSite{
+    font-size: 5vh;
+}
+#popUp4{
+    height: 68vh;
+}
+#overlay{
+    z-index: 9;
+    position: fixed;
+    opacity: 0;
+    transition: 200ms ease-in-out;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(0, 0, 0, 0.9);
+    pointer-events: none;
+}
+#overlay.active{
+    opacity: 1;
+    pointer-events: all;
+}

@@ -1,0 +1,21 @@
+::-webkit-scrollbar {
+    background: transparent;
+    background-color: black;
+    height: 0.9em;
+    width: 0.9em; 
+}
+::-webkit-scrollbar-thumb { 
+    background-image: url('image/pozadini/raketa-scrollbar-dule.png');
+    background-size: cover; 
+    background-repeat: no-repeat;
+    background-position: center;
+}
+
+body::-webkit-scrollbar-thumb:horizontal {
+    background-image: url('image/pozadini/raketamnogudlga.png');
+    background-size: cover;
+}
+
+::-webkit-scrollbar-corner{
+    background-color: #000000;
+}

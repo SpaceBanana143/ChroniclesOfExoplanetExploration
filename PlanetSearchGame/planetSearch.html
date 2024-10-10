@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="planetSearchScrollBar.css">
+    <link rel="stylesheet" href="planetSearch.css">
+    <link rel="stylesheet" href="PSmedia-queries.css">
+    <link rel="stylesheet" href="popUps.css">
+    <link rel="stylesheet" href="buttons.css">
+    <link rel="stylesheet" href="zamatenOverlay.css">
+    <title>Exoplanet Search Game</title>
+</head>
+<body>
+    <div class="popUp active" id="popUp1">
+        <div class="popUp-header">
+            <div class="title">
+                <h1>Exoplanet Search Game </h1>
+            </div>
+        </div>
+        <div class="popUp-body">
+            <h2>Description:</h2>
+            <p>This is an <b>exoplanet search game</b>, where your goal as an astronaut is to find the 32 exoplanets out of the 45 clickable images provided. But there aren't only exoplanets, we have prepared some unexpected objects too. Have fun!</p>
+            <h2>Instructions:</h2>
+            <p>&#10022; Use the mouse to search and click on the exoplanets.<br>
+                &#10022; To move the page use the &#8592; &#8593; &#8594; &#8595; keys on the keyboard. <br>
+                &#10022; If you need to pause, restart or exit to the home page you can use the buttons at the right bottom corner. <br>
+
+            </p>
+        </div>
+        <div class="popUp-footer">
+            <button id="start" onclick="displayZamatenOverlay()">START</button>
+        </div>
+    </div>
+    <!-- Pause pop up -->
+    <div class="popUp" id="popUp2">
+        <div class="popUp-header">
+            <h1>Game paused</h1>
+        </div>
+    <div class="popUp-body">
+        <h2>Good job!</h2>
+        <p class="brojIvreme" id="displayBrojIVreme"></p>
+    </div>
+    <div class="popUp-footer2">
+        <div class="popUp2Buttons">
+            <button id="resume">RESUME</button>
+            <button class="exit" id="exit">EXIT</button>
+        </div>
+    </div></div>
+    <!-- Istece vremeto popUp: -->
+    <div class="popUp" id="popUp3">
+        <div class="popUp-header">
+            <h1>No more time</h1>
+        </div>
+    <div class="popUp-body">
+        <p id="istecenoVreme"></p>
+    </div>
+    <div class="popUp-footer3">
+        <div class="popUp3Buttons">
+            <button class="restart" onclick="pageRefresh()">RESTART</button>
+            <button class="exit">EXIT</button>
+        </div>
+    </div></div>
+    <!-- Najdeni site exoplaneti -->
+    <div class="popUp" id="popUp4">
+        <div class="popUp-header">
+            <h1>Amazing!!!</h1>
+        </div>
+    <div class="popUp-body">
+        <p id="najdeniSite">You found all <b>32 exoplanets</b> in our game. Good job! If you would like to learn something more about exoplanets you should check out the <a href="#" class="nemaVremeINajdeniSiteLinkovi">Exoplanets book </a> or our <a href="#" class="nemaVremeINajdeniSiteLinkovi">Fun facts about exoplanets sticky notes.</a></p>
+    </div>
+    <div class="popUp-footer4">
+        <div class="popUp4Buttons indexZ">
+            <button class="restart" onclick="pageRefresh()">RESTART</button>
+            <button class="exit">EXIT</button>
+        </div>
+    </div></div>
+    <div id="overlay"></div>
+    <div class="brojacPlaneti indexZ">
+        <p id="vreme">--:--</p>
+        <p id="planetiBr" class="indexZ">EXOPLANETS FOUND: --</p>
+    </div>
+    <div class="planetiClickable">
+        <a class="klik"><img src="image/exoplaneti/55 Cancri b.png" id="planeta1" class="slikaP random"></a>
+        <a class="klik"><img src="image/exoplaneti/55-Cancri-e.png" id="planeta2" class="slikaP random"></a>    
+        <a class="klik"><img src="image/exoplaneti/BROWN DWARF.png" id="planeta3" class="slikaP random"></a>  
+        <a class="klik"><img src="image/exoplaneti/Brown-Dwarf-W1935.png" id="planeta4" class="slikaP random"></a> 
+        <a class="klik"><img src="image/exoplaneti/brown-dwarf2.png" id="planeta5" class="slikaP random"></a>  
+        <a class="klik"><img src="image/exoplaneti/Exoplanet HR 8799b.png" id="planeta6" class="slikaP random"></a>
+        <a class="klik"><img src="image/exoplaneti/GJ 1214 b-yellow.png" id="planeta7" class="slikaP random"></a>    
+        <a class="klik"><img src="image/exoplaneti/GJ 1214 b.png" id="planeta8" class="slikaP random"></a>  
+        <a class="klik"><img src="image/exoplaneti/GJ 15 A b.png" id="planeta9" class="slikaP random"></a> 
+        <a class="klik"><img src="image/exoplaneti/GJ 504b.png" id="planeta10" class="slikaP random"></a>
+        <a class="klik"><img src="image/exoplaneti/HAT-P-1b.png" id="planeta11" class="slikaP random"></a>
+        <a class="klik"><img src="image/exoplaneti/HD 189733b.png" id="planeta12" class="slikaP random"></a>    
+        <a class="klik"><img src="image/exoplaneti/HD 209458b.png" id="planeta13" class="slikaP random"></a>  
+        <a class="klik"><img src="image/exoplaneti/Kepler-13Ab.png" id="planeta14" class="slikaP random"></a> 
+        <a class="klik"><img src="image/exoplaneti/Kepler-1649c.png" id="planeta15" class="slikaP random"></a>  
+        <a class="klik"><img src="image/exoplaneti/kepler-22-b.png" id="planeta16" class="slikaP random"></a>
+        <a class="klik"><img src="image/exoplaneti/Kepler-42b.png" id="planeta17" class="slikaP random"></a>    
+        <a class="klik"><img src="image/exoplaneti/kepler-7b-1.png" id="planeta18" class="slikaP random"></a>  
+        <a class="klik"><img src="image/exoplaneti/LHS 3844 b.png" id="planeta19" class="slikaP random"></a> 
+        <a class="klik"><img src="image/exoplaneti/OGLE-2005-BLG-390Lb.png" id="planeta20" class="slikaP random"></a>
+        <a class="klik"><img src="image/exoplaneti/TOI-421b.png" id="planeta21" class="slikaP random"></a>
+        <a class="klik"><img src="image/exoplaneti/TRAPPIST-1 b.png" id="planeta22" class="slikaP random"></a>    
+        <a class="klik"><img src="image/exoplaneti/VHS 1256 b.png" id="planeta23" class="slikaP random"></a>  
+        <a class="klik"><img src="image/exoplaneti/wasp-12-b.png" id="planeta24" class="slikaP random"></a> 
+        <a class="klik"><img src="image/exoplaneti/wasp-39-b.png" id="planeta25" class="slikaP random"></a>  
+        <a class="klik"><img src="image/exoplaneti/wasp-18b.png" id="planeta26" class="slikaP random"></a>
+        <a class="klik"><img src="image/exoplaneti/WASP-19b.png" id="planeta27" class="slikaP random"></a>    
+        <a class="klik"><img src="image/exoplaneti/WASP-31b.png" id="planeta28" class="slikaP random"></a>  
+        <a class="klik"><img src="image/exoplaneti/WASP-17b.png" id="planeta29" class="slikaP random"></a> 
+        <a class="klik"><img src="image/exoplaneti/WASP-12b.png" id="planeta30" class="slikaP random"></a>
+        <a class="klik"><img src="image/exoplaneti/WASP-39b.png" id="planeta31" class="slikaP random"></a>
+        <a class="klik"><img src="image/exoplaneti/WASP-6b.png" id="planeta32" class="slikaP random"></a>
+
+
+        <a class="klikS starLink"><img src="image/Stars/Trappist-1 Planetary System (Illustration)-dzvezda.png" class="stars random"></a>
+        <a class="klikS starLink"><img src="image/Stars/dwarf star K2-18.png" class="stars random"></a>    
+        <a class="klikS starLink"><img src="image/Stars/red dwarf star-26 light-years- constellation Virgo.png" class="stars  random"></a>  
+        <a class="klikS starLink"><img src="image/Stars/Super-Earth Exoplanet 55-Cancri-e-star.png" class="stars random"></a> 
+        <a class="klikS starLink"><img src="image/Stars/TRAPPIST-1-ultracool red dwarf.png" class="stars random"></a>
+        <a class="klikS starLink"><img src="image/Stars/HD 147513-Sun-like star.png" class="stars random"></a>  
+        <a class="klikS starLink"><img src="image/Stars/WASP-39.png" class="stars random"></a> 
+        <a class="klikS starLink"><img src="image/Stars/TRAPPIST-1 ultracool red dwarf(b).png" class="stars random"></a>  
+
+        <a class="klikL banana"><img src="image/pozadini/BananaSpaceLogo.png" class="logo random"></a>  
+        <a class="klikL banana"><img src="image/pozadini/BananaSpaceLogo.png" class="logo random"></a> 
+        <a class="klikL banana"><img src="image/pozadini/BananaSpaceLogo.png" class="logo random"></a>  
+        <a class="klikL banana"><img src="image/pozadini/BananaSpaceLogo.png" class="logo random"></a>
+        <a class="klikL banana"><img src="image/pozadini/BananaSpaceLogo.png" class="logo random"></a>
+
+        
+    </div>
+    <div class="buttons indexZ">
+        <button class="restart" id="restart" onclick="pageRefresh()">RESTART</button>
+        <button id="pause">PAUSE</button>
+        <button class="exit">EXIT</button>
+    </div>
+    <div id="mouseReveal" class="reveal"></div>
+    <script>
+        var BrojPlaneti = 0;
+        let bananaNumber = 0;
+        let starsNumber = 0;
+    </script>
+    <script src="planetSearch.js"></script>
+    <script src="randomPlanetiPozicija.js"></script>
+    <script src="popUpsITajmer.js"></script>
+    <script src="zamatenOverlay.js"></script>
+</body>
+</html>

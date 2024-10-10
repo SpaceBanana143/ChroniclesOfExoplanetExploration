@@ -1,0 +1,10 @@
+#mouseReveal{
+    position: absolute;
+    width: 350px;
+    height: 350px;
+    border-radius: 50%;
+    background: transparent;
+    box-shadow: 0 0 0 5000px rgb(0, 0, 0, 0.97);
+    z-index: 6;
+    pointer-events: none;
+}
